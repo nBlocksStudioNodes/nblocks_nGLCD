@@ -15,7 +15,7 @@ class nBlock_nGLCD: public nBlockSimpleNode<1>{
 	public:
 	
 	nBlock_nGLCD(PinName SDA, PinName SCL,char slave_address,char leading_zeros);
-	void triggerInput(uint32_t inputNumber, uint32_t value);
+	void triggerInput(nBlocks_Message message);
 	
 	private:
 	

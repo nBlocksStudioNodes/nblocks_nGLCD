@@ -25,7 +25,7 @@ nBlock_nGLCD :: nBlock_nGLCD(PinName SDA, PinName SCL,char slave_address,char le
 */
 
 
-void nBlock_nGLCD :: triggerInput(uint32_t inputNumber, uint32_t value){
+void nBlock_nGLCD :: triggerInput(nBlocks_Message message){
 	
 	
 	
@@ -36,7 +36,7 @@ void nBlock_nGLCD :: triggerInput(uint32_t inputNumber, uint32_t value){
 	
 	
 	
-			if(value < 10){
+			if(message.intValue < 10){
 				
 				if(_leading_zeros){
 					
@@ -51,14 +51,14 @@ void nBlock_nGLCD :: triggerInput(uint32_t inputNumber, uint32_t value){
 					_nGLCD.clear_digit(2);
 				}
             
-				_nGLCD.display_number(value,3);
+				_nGLCD.display_number(message.intValue,3);
 					
             }
             
-            if(value >= 10 && value < 100){
+            if(message.intValue >= 10 && message.intValue < 100){
                 
-                ten_place = value/10;
-                unit_place = value % 10;
+                ten_place = message.intValue/10;
+                unit_place = message.intValue % 10;
 				
 				if(_leading_zeros){
 					
@@ -77,14 +77,14 @@ void nBlock_nGLCD :: triggerInput(uint32_t inputNumber, uint32_t value){
                 
             }
             
-            if(value >= 100 && value < 1000){
+            if(message.intValue >= 100 && message.intValue < 1000){
                 
-                hundred_place = value/100;
+                hundred_place = message.intValue/100;
                 
-                ten_place = value/10;
+                ten_place = message.intValue/10;
                 ten_place = ten_place % 10;
                 
-                unit_place = value % 10;
+                unit_place = message.intValue % 10;
 				
 				if(_leading_zeros){
 					
@@ -104,17 +104,17 @@ void nBlock_nGLCD :: triggerInput(uint32_t inputNumber, uint32_t value){
                 
             }
             
-            if(value >= 1000 && value <10000){
+            if(message.intValue >= 1000 && message.intValue <10000){
                 
-                thousand_place = value/1000;
+                thousand_place = message.intValue/1000;
                 
-                hundred_place = value/100;
+                hundred_place = message.intValue/100;
                 hundred_place = hundred_place % 10;
                 
-                ten_place = value/10;
+                ten_place = message.intValue/10;
                 ten_place = ten_place % 10;
                 
-                unit_place = value % 10; 
+                unit_place = message.intValue % 10; 
 
 				
                 _nGLCD.display_number(thousand_place,0);
