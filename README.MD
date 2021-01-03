@@ -1,7 +1,8 @@
 # nGLCD 
 LCD Driver Node for N-GLCD n-Block: displays on LCD data received on input.
 When the input is triggered, the value on the input, split into individual digits (BCD) to display in the correct position on the nGLCD n-Block board (Ultra Low Power PCA8561 I2C driver and S401M16KR LCD)
-Parameters:
+
+## Parameters:
  *  PinName: pinSDA
  *  PinName: pinSCL
  *  char: I2C address
