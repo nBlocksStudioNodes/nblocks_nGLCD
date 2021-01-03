@@ -1,0 +1,54 @@
+{
+    "category": "LCD",
+    "name": "nGLCD",
+    "inputs": 1,
+    "outputs": 1,
+    "parameters": [
+        {
+            "name": "SDA",
+            "type": "raw",
+            "default": "",
+            "options": [
+                ""
+            ],
+            "value": ""
+        },
+        {
+            "name": "SCL",
+            "type": "raw",
+            "default": "",
+            "options": [
+                ""
+            ],
+            "value": ""
+        },
+        {
+            "name": "Slave Address",
+            "type": "raw",
+            "default": "",
+            "options": [
+                ""
+            ],
+            "value": ""
+        },
+        {
+            "name": "leading Zeros",
+            "type": "int",
+            "default": 0,
+            "options": [
+                ""
+            ],
+            "value": 0
+        }
+    ],
+    "labels": {
+        "input": [],
+        "output": []
+    },
+    "schematic_pins": {
+        "inputs": [],
+        "outputs": []
+    },
+    "repository": "https://github.com/nBlocksStudioNodes/nblocks_nGLCD",
+    "revision": ""
+}
